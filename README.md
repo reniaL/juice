@@ -44,7 +44,7 @@ juice/
 
 ## 当前进度
 
-当前已经完成 JDK 8、JDK 11 和 JDK 17 的首批示例与专题文档。
+当前已经完成 JDK 8、JDK 11、JDK 17 和 JDK 21 的首批示例与专题文档。
 
 JDK 8 当前覆盖：
 
@@ -74,6 +74,13 @@ JDK 17 当前覆盖：
 - Pattern Matching for instanceof
 - Text Blocks
 - 改进的空指针异常信息
+
+JDK 21 当前覆盖：
+
+- Virtual Threads
+- Record Patterns
+- Pattern Matching for switch
+- Sequenced Collections
 
 ## 构建说明
 
@@ -135,4 +142,18 @@ mvn -q -pl jdk-17-demo package -DskipTests
 
 ```bash
 java -cp jdk-17-demo/target/classes com.juice.jdk17.DemoApplication
+```
+
+## 运行 JDK 21 示例
+
+先编译模块：
+
+```bash
+mvn -q -pl jdk-21-demo package -DskipTests
+```
+
+再运行统一入口：
+
+```bash
+java -cp jdk-21-demo/target/classes com.juice.jdk21.DemoApplication
 ```
