@@ -44,7 +44,9 @@ juice/
 
 ## 当前进度
 
-当前已经完成 JDK 8 的第一批示例与专题文档，覆盖：
+当前已经完成 JDK 8 和 JDK 11 的首批示例与专题文档。
+
+JDK 8 当前覆盖：
 
 - Lambda 表达式
 - 方法引用
@@ -55,6 +57,15 @@ juice/
 - 接口默认方法与静态方法
 - 新日期时间 API
 - CompletableFuture
+
+JDK 11 当前覆盖：
+
+- HttpClient API
+- 单文件源码运行
+- String API 增强
+- Files API 增强
+- var 在 Lambda 参数中的使用
+- Optional 与集合相关 API 的补充能力
 
 ## 构建说明
 
@@ -83,3 +94,23 @@ java -cp jdk-8-demo/target/classes com.juice.jdk8.DemoApplication
 ```
 
 如果想先阅读内容，再查看代码，建议从 [docs/jdk-8.md](docs/jdk-8.md) 开始，然后进入 [jdk-8-demo/src/main/java/com/juice/jdk8/DemoApplication.java](jdk-8-demo/src/main/java/com/juice/jdk8/DemoApplication.java)。
+
+## 运行 JDK 11 示例
+
+先编译模块：
+
+```bash
+mvn -q -pl jdk-11-demo package -DskipTests
+```
+
+再运行统一入口：
+
+```bash
+java -cp jdk-11-demo/target/classes com.juice.jdk11.DemoApplication
+```
+
+单文件源码运行示例位于 [jdk-11-demo/single-file/SingleFileHello.java](jdk-11-demo/single-file/SingleFileHello.java)，可以单独进入该目录后执行：
+
+```bash
+java SingleFileHello.java
+```
