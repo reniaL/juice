@@ -34,13 +34,27 @@ juice/
 
 ## 文档入口
 
-- docs/jdk-feature-showcase-plan.md：总体方案
-- docs/overview.md：项目总览
-- docs/jdk-8.md：JDK 8 专题
-- docs/jdk-11.md：JDK 11 专题
-- docs/jdk-17.md：JDK 17 专题
-- docs/jdk-21.md：JDK 21 专题
-- docs/jdk-25.md：JDK 25 专题
+- [docs/jdk-feature-showcase-plan.md](docs/jdk-feature-showcase-plan.md)：总体方案
+- [docs/overview.md](docs/overview.md)：项目总览
+- [docs/jdk-8.md](docs/jdk-8.md)：JDK 8 专题
+- [docs/jdk-11.md](docs/jdk-11.md)：JDK 11 专题
+- [docs/jdk-17.md](docs/jdk-17.md)：JDK 17 专题
+- [docs/jdk-21.md](docs/jdk-21.md)：JDK 21 专题
+- [docs/jdk-25.md](docs/jdk-25.md)：JDK 25 专题
+
+## 当前进度
+
+当前已经完成 JDK 8 的第一批示例与专题文档，覆盖：
+
+- Lambda 表达式
+- 方法引用
+- 函数式接口
+- Stream API
+- Collectors 进阶
+- Optional
+- 接口默认方法与静态方法
+- 新日期时间 API
+- CompletableFuture
 
 ## 构建说明
 
@@ -52,4 +66,20 @@ juice/
 mvn -pl jdk-17-demo package
 ```
 
-不同模块会使用各自的编译版本配置，具体运行方式会在后续示例完善时继续补充。
+不同模块会使用各自的编译版本配置。
+
+## 运行 JDK 8 示例
+
+先编译模块：
+
+```bash
+mvn -q -pl jdk-8-demo package -DskipTests
+```
+
+再运行统一入口：
+
+```bash
+java -cp jdk-8-demo/target/classes com.juice.jdk8.DemoApplication
+```
+
+如果想先阅读内容，再查看代码，建议从 [docs/jdk-8.md](docs/jdk-8.md) 开始，然后进入 [jdk-8-demo/src/main/java/com/juice/jdk8/DemoApplication.java](jdk-8-demo/src/main/java/com/juice/jdk8/DemoApplication.java)。
