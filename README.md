@@ -44,7 +44,7 @@ juice/
 
 ## 当前进度
 
-当前已经完成 JDK 8 和 JDK 11 的首批示例与专题文档。
+当前已经完成 JDK 8、JDK 11 和 JDK 17 的首批示例与专题文档。
 
 JDK 8 当前覆盖：
 
@@ -66,6 +66,14 @@ JDK 11 当前覆盖：
 - Files API 增强
 - var 在 Lambda 参数中的使用
 - Optional 与集合相关 API 的补充能力
+
+JDK 17 当前覆盖：
+
+- Record
+- Sealed Class
+- Pattern Matching for instanceof
+- Text Blocks
+- 改进的空指针异常信息
 
 ## 构建说明
 
@@ -113,4 +121,18 @@ java -cp jdk-11-demo/target/classes com.juice.jdk11.DemoApplication
 
 ```bash
 java SingleFileHello.java
+```
+
+## 运行 JDK 17 示例
+
+先编译模块：
+
+```bash
+mvn -q -pl jdk-17-demo package -DskipTests
+```
+
+再运行统一入口：
+
+```bash
+java -cp jdk-17-demo/target/classes com.juice.jdk17.DemoApplication
 ```
